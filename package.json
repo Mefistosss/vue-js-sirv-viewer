@@ -5,6 +5,13 @@
   "description": "Viewer Component for Vue.js",
   "author": "euvl <sergeypo@protonmail.com>",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mefistosss/vue-js-smv-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mefistosss/vue-js-smv-viewer/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueJsSirvViewer src/index.js",
