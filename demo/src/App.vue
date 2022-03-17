@@ -1,7 +1,7 @@
 <template>
     <button v-if="backButton" v-on:click="back" class="btn">Back</button>
     <div class="window">
-        <p>Sirv Media Viewer</p>
+        <p>Sirv Media Viewer <a href="https://sirv.com/help/articles/sirv-media-viewer/">documentation</a></p>
         <component :is="currentView" />
     </div>
 </template>
@@ -69,9 +69,11 @@ body {
 }
 
 pre {
-  color: #595959;
-  background-color: #f3f3f3;
-  border: 1px solid #eee;
+    background-color: transparent;
+    border: none !important;
+    line-height: 1.5;
+    text-align: left;
+    display: inline-block;
 }
 
 .btn {
@@ -101,5 +103,46 @@ pre {
 
 p {
     text-align: left;
+}
+
+.example {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.tool {
+    max-width: 600px;
+}
+
+.code {
+    padding-left: 10px;
+}
+.code .wrapper {
+    overflow: auto;
+    color: #595959;
+    background-color: #f3f3f3;
+    border: 1px solid #eee;
+    padding: 0 10px;
+}
+
+.tool, .code {
+    width: 50%;
+}
+
+@media (max-width: 1024px) {
+    .example {    
+        flex-direction: column;
+    }
+    .tool {
+        max-width: 100%;
+    }
+    .code {
+        padding-left: 0px;
+    }
+    .tool, .code {
+        width: 100%;
+    }
+    
 }
 </style>

@@ -5,6 +5,7 @@
         :id="id"
         :data-src="dataSrc"
         :data-bg-src="dataBgSrc"
+        :style="$attrs.style"
     >
         <sirv-component
             v-for="slide in parsedComponents"
@@ -29,7 +30,6 @@
         :id="id"
         :data-src="dataSrc"
         :data-options="stringOptions"
-        
     />
 </template>
 
@@ -61,9 +61,17 @@ const getComponentType = (src) => {
     return result;
 }
 
+const setNullByDefault = (value) => {
+    if (!value) {
+        value = null;
+    }
+
+    return value;
+};
+
 export default {
-    name: 'VueJsSirvViewer',
-    inheritAttrs: false,
+    name: 'SirvMediaViewer',
+    inheritAttrs: true,
     components: { SirvComponent },
     // state: {
     //   l: 0
@@ -111,55 +119,41 @@ export default {
                     c = [c];
                 }
                 c = c.map((v) => {
-                if (typeof v === 'string') {
-                    v = { src: v };
-                }
+                    if (typeof v === 'string') {
+                        v = { src: v };
+                    }
 
-                if (!v.type) {
-                    v.type = getComponentType(v.src);
-                }
+                    if (!v.type) {
+                        v.type = getComponentType(v.src);
+                    }
 
-                if (!v.options) {
-                    v.options = null;
-                }
+                    v.options = setNullByDefault(v.options);
+                    v.id = setNullByDefault(v.id);
+                    v.pinned = setNullByDefault(v.pinned);
+                    v.thumbnailImage = setNullByDefault(v.thumbnailImage);
+                    v.thumbnailHtml = setNullByDefault(v.thumbnailHtml);
 
-                if (!v.id) {
-                    v.id = null;
-                }
+                    if (v.slideDisabled) {
+                        v.slideDisabled = '';
+                    } else {
+                        v.slideDisabled = null;
+                    }
 
-                if (!v.pinned) {
-                    v.pinned = null;
-                }
+                    if (v.swipeDisabled) {
+                        v.swipeDisabled = '';
+                    } else {
+                        v.swipeDisabled = null;
+                    }
 
-                if (!v.thumbnailImage) {
-                    v.thumbnailImage = null;
-                }
+                    if (v.hiddenSelector) {
+                        v.hiddenSelector = '';
+                    } else {
+                        v.hiddenSelector = null;
+                    }
 
-                if (!v.thumbnailHtml) {
-                    v.thumbnailHtml = null;
-                }
+                    v.staticImage = v.staticImage === true ? 'static' : null;
 
-                if (v.slideDisabled) {
-                    v.slideDisabled = '';
-                } else {
-                    v.slideDisabled = null;
-                }
-
-                if (v.swipeDisabled) {
-                    v.swipeDisabled = '';
-                } else {
-                    v.swipeDisabled = null;
-                }
-
-                if (v.hiddenSelector) {
-                    v.hiddenSelector = '';
-                } else {
-                    v.hiddenSelector = null;
-                }
-
-                v.staticImage = v.staticImage === true ? 'static' : null;
-
-                return v;
+                    return v;
                 });
 
                 return c;

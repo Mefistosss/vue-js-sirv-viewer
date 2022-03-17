@@ -1,10 +1,10 @@
 <template>
-    <pre style="line-height: 1.5;">
-        npm install --save vue-js-smv-viewer
+    <pre class="prettyprint">
+npm install --save vue-js-smv-viewer
 
-        ...
-        import SmvViewer from 'vue-js-smv-viewer'
-        Vue.use(SmvViewer)
+...
+import SmvViewer from 'vue-js-smv-viewer'
+Vue.use(SmvViewer)
     </pre>
     <div class="example-container">
         <a href="#/example1">
@@ -18,7 +18,10 @@
 
 <script>
 export default {
-    name: 'MainPage'
+    name: 'MainPage',
+    mounted() {
+        console.log(this.$smv);
+    },
 }
 </script>
 

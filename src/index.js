@@ -2,18 +2,10 @@ import SirvViewer from './components/SirvViewer.vue';
 
 const VueJsSirvViewer = {
     install(Vue) {
-        // inject a globally available $translate() method
-        // Vue.config.globalProperties.$translate = (key) => {
-        //     // retrieve a nested property in `options`
-        //     // using `key` as the path
-        //     return key.split('.').reduce((o, i) => {
-        //         if (o) return o[i];
-        //     }, options);
-        // }
-
         // Let's register our component globally
         // https://vuejs.org/v2/guide/components-registration.html
-        Vue.component("vue-js-sirv-viewer", SirvViewer);
+        Vue.component("sirv-media-viewer", SirvViewer);
+        Vue.config.globalProperties.$smv = window.Sirv;
     }
 };
 
