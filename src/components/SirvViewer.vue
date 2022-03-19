@@ -12,15 +12,15 @@
             :key="slide.src"
             :src="slide.src"
             :type="slide.type"
-            :componentOptions="slide.options"
+            :componentOptions="slide.dataOptions"
             :id="slide.id"
-            :thumbnailImage="slide.thumbnailImage"
-            :thumbnailHtml="slide.thumbnailHtml"
-            :slideDisabled="slide.slideDisabled"
-            :swipeDisabled="slide.swipeDisabled"
-            :hiddenSelector="slide.hiddenSelector"
-            :pinned="slide.pinned"
-            :staticImage="slide.staticImage"
+            :thumbnailImage="slide.dataThumbnailImage"
+            :thumbnailHtml="slide.dataThumbnailHtml"
+            :slideDisabled="slide.dataSlideDisabled"
+            :swipeDisabled="slide.dataSwipeDisabled"
+            :hiddenSelector="slide.dataHiddenSelector"
+            :pinned="slide.dataPinned"
+            :staticImage="slide.dataStaticImage"
         />
         <slot v-if="parsedComponents.length == 0"></slot>
     </div>

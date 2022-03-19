@@ -8,13 +8,19 @@
 
 <script>
 import Main from './components/Main.vue';
-import Example1  from './components/Example1.vue';
-import Example2  from './components/Example2.vue';
+import Example1 from './components/Example1.vue';
+import Example2 from './components/Example2.vue';
+import Example3 from './components/Example3.vue';
+import Example4 from './components/Example4.vue';
+import Example5 from './components/Example5.vue';
 
 const routes = {
     '/': Main,
     '/example1': Example1,
-    '/example2': Example2
+    '/example2': Example2,
+    '/example3': Example3,
+    '/example4': Example4,
+    '/example5': Example5
 };
 
 export default {
@@ -74,6 +80,8 @@ pre {
     line-height: 1.5;
     text-align: left;
     display: inline-block;
+    width: 100%;
+    padding: 0 !important;
 }
 
 .btn {
@@ -99,6 +107,7 @@ pre {
     border-radius: 12px;
     padding: 10px;
     box-shadow: 0px 0px 30px 1px;
+    /* min-height: 500px; */
 }
 
 p {
@@ -113,6 +122,7 @@ p {
 
 .tool {
     max-width: 600px;
+    height: 100%;
 }
 
 .code {
@@ -124,6 +134,9 @@ p {
     background-color: #f3f3f3;
     border: 1px solid #eee;
     padding: 0 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
 }
 
 .tool, .code {
@@ -144,5 +157,27 @@ p {
         width: 100%;
     }
     
+}
+
+@media (min-width: 1200px) {
+    .code {
+        width: 100%;
+    }
+}
+
+.description {
+    text-align: left;
+}
+.string {
+    display: inline-block;
+    width: auto !important;
+    color: #595959;
+    background-color: #f3f3f3;
+    border: 1px solid #eee !important;
+    padding: 6px !important;
+    border-radius: 3px;
+}
+li {
+    height: 40px;
 }
 </style>

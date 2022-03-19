@@ -6,6 +6,7 @@ npm install --save vue-js-smv-viewer
 import SmvViewer from 'vue-js-smv-viewer'
 Vue.use(SmvViewer)
     </pre>
+    <p>Viewer</p>
     <div class="example-container">
         <a href="#/example1">
             <div> Simple </div>
@@ -13,7 +14,17 @@ Vue.use(SmvViewer)
         <a href="#/example2">
             <div> Simple 2 </div>
         </a>
-  </div>
+        <a href="#/example3">
+            <div> Simple 3 </div>
+        </a>
+        <a href="#/example4">
+            <div> Simple 4 </div>
+        </a>
+        <a href="#/example5">
+            <div> Simple 5 </div>
+        </a>
+    </div>
+    <p>Lazy image</p>
 </template>
 
 <script>
