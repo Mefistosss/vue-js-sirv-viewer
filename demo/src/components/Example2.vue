@@ -55,6 +55,9 @@
 </pre>
         </div></div>
     </div>
+    <div class="description">
+        <p>Sirv Media Viewer <a href="https://sirv.com/help/articles/sirv-media-viewer/">documentation</a></p>
+    </div>
 </template>
 
 <script>

@@ -23,8 +23,19 @@ Vue.use(SmvViewer)
         <a href="#/example5">
             <div> Simple 5 </div>
         </a>
+        <a href="#/example6">
+            <div> Events, API </div>
+        </a>
     </div>
     <p>Lazy image</p>
+    <div class="example-container">
+        <a href="#/example7">
+            <div>Lazy image</div>
+        </a>
+        <a href="#/example8">
+            <div>Lazy image 2</div>
+        </a>
+    </div>
 </template>
 
 <script>

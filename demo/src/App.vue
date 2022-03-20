@@ -1,7 +1,6 @@
 <template>
     <button v-if="backButton" v-on:click="back" class="btn">Back</button>
     <div class="window">
-        <p>Sirv Media Viewer <a href="https://sirv.com/help/articles/sirv-media-viewer/">documentation</a></p>
         <component :is="currentView" />
     </div>
 </template>
@@ -13,6 +12,9 @@ import Example2 from './components/Example2.vue';
 import Example3 from './components/Example3.vue';
 import Example4 from './components/Example4.vue';
 import Example5 from './components/Example5.vue';
+import Example6 from './components/Example6.vue';
+import Example7 from './components/Example7.vue';
+import Example8 from './components/Example8.vue';
 
 const routes = {
     '/': Main,
@@ -20,7 +22,10 @@ const routes = {
     '/example2': Example2,
     '/example3': Example3,
     '/example4': Example4,
-    '/example5': Example5
+    '/example5': Example5,
+    '/example6': Example6,
+    '/example7': Example7,
+    '/example8': Example8
 };
 
 export default {

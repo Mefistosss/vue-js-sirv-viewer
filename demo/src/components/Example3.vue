@@ -91,18 +91,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* .description {
-    text-align: left;
-}
-.string {
-    display: inline-block;
-    width: auto !important;
-    color: #595959;
-    background-color: #f3f3f3;
-    border: 1px solid #eee !important;
-    padding: 6px !important;
-}
-li {
-    height: 40px;
-} */
+
 </style>
