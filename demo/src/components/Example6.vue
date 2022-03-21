@@ -1,9 +1,10 @@
 <template>
     <p>Options, slide properties</p>
+    
     <div class="example">
         <div class="tool">
             <sirv-media-viewer
-                :id="this.id"
+                :id="id"
                 :slides="[{
                     id: 'test-image',
                     src: 'https://demo.sirv.com/demo/snug/teal-b-throw.jpg',
@@ -42,12 +43,74 @@
         </div></div>
     </div>
     <div class="description">
-        <p>Additional inforamation about Sirv Media Viewer you can find <a href="https://sirv.com/help/articles/sirv-media-viewer/">here</a></p>
-        <p>API</p>
-        <p>
+        <p>API example</p>
+        <p class="api">
             <button :disabled="!viewer" v-on:click="prev" class="btn">Prev</button>
             <button :disabled="!viewer" v-on:click="next" class="btn">Next</button>
         </p>
+        <div class="code">
+            <div class="wrapper">
+                <pre class="prettyprint lang-javascript">
+export default {
+    name: 'example',
+    data() {
+        return {
+            viewer: null
+        }
+    },
+    created() {
+        this.id = 'smv-test';
+        this.connections = {};
+    },
+    methods: {
+        prev() {
+            if (this.viewer) {
+                this.viewer.prev();
+            }
+        },
+        next() {
+            if (this.viewer) {
+                this.viewer.next();
+            }
+        }
+    },
+    mounted() {
+        this.connections['viewer:ready'] = this.$smv.on('viewer:ready', (e) => {
+            if (e.id === this.id) {
+                this.viewer = e;
+                console.log('viewer:ready', e);
+            }
+        });
+
+        this.connections['spin:init'] = this.$smv.on('spin:init', (e) => {
+            if (e.id === 'test-spin') {
+                console.log('spin:init', e);
+            }
+        });
+
+        this.connections['zoom:ready'] = this.$smv.on('zoom:ready', (e) => {
+            if (e.id === 'test-zoom') {
+                console.log('zoom:ready', e);
+            }
+        });
+
+        this.connections['image:ready'] = this.$smv.on('image:ready', (e) => {
+            if (e.id === 'test-image') {
+                console.log('image:ready', e);
+            }
+        });
+    },
+    beforeUnmount() {
+        this.$smv.off('viewer:ready', this.connections['viewer:ready']);
+        this.$smv.off('spin:init', this.connections['spin:init']);
+        this.$smv.off('zoom:ready', this.connections['zoom:ready']);
+        this.$smv.off('image:ready', this.connections['image:ready']);
+    }
+}
+                </pre>
+            </div>
+        </div>
+        <p>Additional information about events and API you can find into <a href="https://sirv.com/help/articles/sirv-media-viewer/">documentation</a></p>
     </div>
 </template>
 <script>
@@ -83,15 +146,21 @@ export default {
         });
 
         this.connections['spin:init'] = this.$smv.on('spin:init', (e) => {
-            console.log('spin:init', e);
+            if (e.id === 'test-spin') {
+                console.log('spin:init', e);
+            }
         });
 
         this.connections['zoom:ready'] = this.$smv.on('zoom:ready', (e) => {
-            console.log('zoom:ready', e);
+            if (e.id === 'test-zoom') {
+                console.log('zoom:ready', e);
+            }
         });
 
         this.connections['image:ready'] = this.$smv.on('image:ready', (e) => {
-            console.log('image:ready', e);
+            if (e.id === 'test-image') {
+                console.log('image:ready', e);
+            }
         });
     },
     beforeUnmount() {
@@ -105,5 +174,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.api .btn {
+    display: inline-block;
+    margin: 10px;
+}
+.description .code {
+    padding: 0;
+}
 </style>

@@ -77,7 +77,7 @@
                 <li><pre class="string">dataSwipeDisabled</pre> - Disable slide swipe [Boolean]</li>
                 <li><pre class="string">dataHiddenSelector</pre> - Hide selector [Boolean]</li>
                 <li><pre class="string">dataPinned</pre> - Pinned selector [String]. <pre class="string">left, right</pre></li>
-                <li><pre class="string">dataStaticImage</pre> - Static image [Boolean].</li>
+                <li><pre class="string">staticImage</pre> - Static image [Boolean].</li>
             </ul>
         </p>
         <p>Additional inforamation about Sirv Media Viewer you can find <a href="https://sirv.com/help/articles/sirv-media-viewer/">here</a></p>

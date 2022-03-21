@@ -16,11 +16,11 @@
             :id="slide.id"
             :thumbnailImage="slide.dataThumbnailImage"
             :thumbnailHtml="slide.dataThumbnailHtml"
-            :slideDisabled="slide.dataSlideDisabled"
+            :slideDisabled="slide.dataDisabled"
             :swipeDisabled="slide.dataSwipeDisabled"
             :hiddenSelector="slide.dataHiddenSelector"
             :pinned="slide.dataPinned"
-            :staticImage="slide.dataStaticImage"
+            :staticImage="slide.staticImage"
         />
         <slot v-if="parsedComponents.length == 0"></slot>
     </div>
@@ -127,28 +127,31 @@ export default {
                         v.type = getComponentType(v.src);
                     }
 
-                    v.options = setNullByDefault(v.options);
+            // :id="slide.id"
+            // :staticImage="slide.dataStaticImage"
+
+                    v.dataOptions = setNullByDefault(v.dataOptions);
                     v.id = setNullByDefault(v.id);
-                    v.pinned = setNullByDefault(v.pinned);
-                    v.thumbnailImage = setNullByDefault(v.thumbnailImage);
-                    v.thumbnailHtml = setNullByDefault(v.thumbnailHtml);
+                    v.dataPinned = setNullByDefault(v.dataPinned);
+                    v.dataThumbnailImage = setNullByDefault(v.dataThumbnailImage);
+                    v.dataThumbnailHtml = setNullByDefault(v.dataThumbnailHtml);
 
-                    if (v.slideDisabled) {
-                        v.slideDisabled = '';
+                    if (v.dataDisabled) {
+                        v.dataDisabled = '';
                     } else {
-                        v.slideDisabled = null;
+                        v.dataDisabled = null;
                     }
 
-                    if (v.swipeDisabled) {
-                        v.swipeDisabled = '';
+                    if (v.dataSwipeDisabled) {
+                        v.dataSwipeDisabled = '';
                     } else {
-                        v.swipeDisabled = null;
+                        v.dataSwipeDisabled = null;
                     }
 
-                    if (v.hiddenSelector) {
-                        v.hiddenSelector = '';
+                    if (v.dataHiddenSelector) {
+                        v.dataHiddenSelector = '';
                     } else {
-                        v.hiddenSelector = null;
+                        v.dataHiddenSelector = null;
                     }
 
                     v.staticImage = v.staticImage === true ? 'static' : null;

@@ -1,10 +1,9 @@
 <template>
     <img
         v-if="type == 'image'"
-        :data-type="staticImage"
         :data-src="src"
         :data-options="optionsToString"
-        :data-id="id"
+        :id="id"
         :data-thumbnail-image="thumbnailImage"
         :data-thumbnail-html="thumbnailHtml"
         :data-disabled="slideDisabled"
@@ -15,10 +14,10 @@
     <div
         v-else
         v-html="type == 'html' ? src : null"
-        :data-type="type == 'zoom' ? 'zoom' : null"
+        :data-type="type == 'zoom' ? 'zoom' : (staticImage || null)"
         :data-src="type == 'html' ? null : src"
         :data-options="optionsToString"
-        :data-id="id"
+        :id="id"
         :data-thumbnail-image="thumbnailImage"
         :data-thumbnail-html="thumbnailHtml"
         :data-disabled="slideDisabled"
