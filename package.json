@@ -4,19 +4,13 @@
   "private": true,
   "description": "Viewer Component for Vue.js",
   "author": "euvl <sergeypo@protonmail.com>",
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Mefistosss/vue-js-smv-viewer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Mefistosss/vue-js-smv-viewer/issues"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueJsSirvViewer src/index.js",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "main": "dist/index.js",
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
@@ -26,11 +20,15 @@
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-unit-jest": "^5.0.4",
     "@vue/cli-service": "~5.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "babel-jest": "^27.0.6",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "jest": "^27.0.5"
   },
-  "license": "MIT",
   "eslintConfig": {
     "root": true,
     "env": {
@@ -43,12 +41,31 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/Mefistosss/vue-js-smv-viewer/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mefistosss/vue-js-smv-viewer.git"
+  }
 }

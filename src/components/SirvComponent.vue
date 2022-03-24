@@ -86,12 +86,13 @@ export default {
         },
         componentOptions: {
             type: Object,
-            default(value) {
-                if (!value || Object.keys(value).length === 0) {
-                    value = null;
-                }
-                return value;
-            }
+            // default(value) {
+            //     if (!value || Object.keys(value).length === 0) {
+            //         value = null;
+            //     }
+            //     return value;
+            // }
+            default: null
         }
     },
     created () {
