@@ -67,12 +67,7 @@
 
 <script>
 export default {
-    name: 'ExamplePage1',
-    mounted() {
-        if (window.PR) {
-            window.PR.prettyPrint();
-        }
-    }
+  name: 'ExamplePage1'
 }
 </script>
 

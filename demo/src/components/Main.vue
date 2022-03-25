@@ -42,10 +42,8 @@ Vue.use(SmvViewer)
 export default {
     name: 'MainPage',
     mounted() {
-        if (window.PR) {
-            window.PR.prettyPrint();
-        }
-    }
+        console.log(this.$smv);
+    },
 }
 </script>
 

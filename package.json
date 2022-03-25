@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Viewer Component for Vue.js",
-  "author": "sergey <sergeypo@protonmail.com>",
+  "author": "euvl <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueJsSirvViewer src/index.js",
@@ -12,9 +12,7 @@
   },
   "main": "dist/index.js",
   "dependencies": {
-    "core-js": "^3.8.3"
-  },
-  "peerDependencies": {
+    "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {
@@ -63,11 +61,11 @@
     "not ie 11"
   ],
   "bugs": {
-    "url": "https://github.com/Mefistosss/vue-js-sirv-viewer/issues"
+    "url": "https://github.com/Mefistosss/vue-js-smv-viewer/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mefistosss/vue-js-sirv-viewer.git"
+    "url": "https://github.com/Mefistosss/vue-js-smv-viewer.git"
   }
 }

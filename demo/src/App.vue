@@ -43,7 +43,7 @@ export default {
         },
 
         backButton() {
-            return !['#/', ''].includes(this.currentPath);
+            return this.currentPath !== '#/';
         }
     },
     mounted() {
@@ -164,11 +164,11 @@ p {
     
 }
 
-/* @media (min-width: 1200px) {
-    .tool, .code {
+@media (min-width: 1200px) {
+    .code {
         width: 100%;
     }
-} */
+}
 
 .description {
     text-align: left;

@@ -138,10 +138,6 @@ export default {
         }
     },
     mounted() {
-        if (window.PR) {
-            window.PR.prettyPrint();
-        }
-
         this.connections['viewer:ready'] = this.$smv.on('viewer:ready', (e) => {
             if (e.id === this.id) {
                 this.viewer = e;

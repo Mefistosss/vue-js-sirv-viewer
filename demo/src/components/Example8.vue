@@ -21,12 +21,7 @@
 
 <script>
 export default {
-    name: 'ExamplePage8',
-    mounted() {
-        if (window.PR) {
-            window.PR.prettyPrint();
-        }
-    }
+  name: 'ExamplePage8'
 }
 </script>
 

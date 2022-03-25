@@ -26,7 +26,6 @@ const removeComents = (str) => {
 
 const SRC1 = 'https://example.com/test.jpg';
 const SRC2 = 'https://example.com/test.spin';
-const SRC3 = 'https://example.com/test.view';
 
 describe('SirvViewer.vue', () => {
     it('simple', () => {
@@ -39,41 +38,70 @@ describe('SirvViewer.vue', () => {
         );
     });
 
-    it('options', () => {
-        const slides = [ SRC1, SRC2 ];
-        const options = {
-            autostart: 'visible',
-            fullscreen: {
-                enable: false
-            }
-        };
-        const wrapper = propsFactory({ slides, id: 'test-id', options });
-        const slide1 = (`<div src="${SRC1}" type="zoom"></div>`);
-        const slide2 = (`<div src="${SRC2}" type="spin"></div>`);
-        expect(removeComents(wrapper.html())).toBe(
-            `<div class="Sirv" data-options="autostart:visible;fullscreen.enable:false" id="test-id">\n  ${slide1}\n  ${slide2}\n  \n</div>`
-        );
-    });
 
-    it('view file', () => {
-        const slides = [ SRC1, SRC2 ];
-        const wrapper = propsFactory({ slides, id: 'test-id', dataSrc: SRC3 });
-        expect(removeComents(wrapper.html())).toBe(
-            `<div class="Sirv" data-options="autostart:off" id="test-id" data-src="${SRC3}"></div>`
-        );
-    });
+    // <div class="Sirv"
+    //     v-if="!isImage(dataSrc)"
+    //     :data-options="stringOptions"
+    //     :id="id"
+    //     :data-src="dataSrc"
+    //     :data-bg-src="dataBgSrc"
+    //     :style="$attrs.style"
+    // >
+    //     <sirv-component
+    //         v-for="slide in parsedComponents"
+    //         :key="slide.src"
+    //         :src="slide.src"
+    //         :type="slide.type"
+    //         :componentOptions="slide.dataOptions"
+    //         :id="slide.id"
+    //         :thumbnailImage="slide.dataThumbnailImage"
+    //         :thumbnailHtml="slide.dataThumbnailHtml"
+    //         :slideDisabled="slide.dataDisabled"
+    //         :swipeDisabled="slide.dataSwipeDisabled"
+    //         :hiddenSelector="slide.dataHiddenSelector"
+    //         :pinned="slide.dataPinned"
+    //         :staticImage="slide.staticImage"
+    //     />
+    //     <slot v-if="parsedComponents.length == 0"></slot>
+    // </div>
 
-    it('background image', () => {
-        const wrapper = propsFactory({ id: 'test-id', dataBgSrc: SRC1 });
-        expect(removeComents(wrapper.html())).toBe(
-            `<div class="Sirv" data-options="autostart:off" id="test-id" data-bg-src="${SRC1}"></div>`
-        );
-    });
 
-    it('lazy image', () => {
-        const wrapper = propsFactory({ id: 'test-id', dataSrc: SRC1 });
-        expect(removeComents(wrapper.html())).toBe(
-            `<img class="Sirv" id="test-id" data-src="${SRC1}" data-options="autostart:off">`
-        );
-    });
+
+    // it('spin', () => {
+    //     const type = 'spin';
+    //     const src = SRC2;
+    //     const wrapper = propsFactory({ type, src, });
+    //     expect(removeComents(wrapper.html())).toBe(`<div data-src="${src}"></div>`);
+    // });
+    // it('image', () => {
+    //     const type = 'image';
+    //     const src = SRC1;
+    //     const wrapper = propsFactory({ type, src, });
+    //     expect(removeComents(wrapper.html())).toBe(`<img data-src="${src}">`);
+    // });
+    // it('zoom', () => {
+    //     const type = 'zoom';
+    //     const src = SRC1;
+    //     const wrapper = propsFactory({ type, src, });
+    //     expect(removeComents(wrapper.html())).toBe(`<div data-type="${type}" data-src="${src}"></div>`);
+    // });
+    // it('html', () => {
+    //     const type = 'html';
+    //     const src = '<div>Hello world</div>';
+    //     const wrapper = propsFactory({ type, src, });
+    //     expect(removeComents(wrapper.html())).toBe(`<div>\n  ${src}\n</div>`);
+    // });
+    // it('Other props', () => {
+    //     const type = 'spin';
+    //     const src = SRC2;
+    //     const id = 'testId';
+    //     const thumbnailImage = SRC1;
+    //     const slideDisabled = true;
+    //     const thumbnailHtml = '<div>Selector</div>';
+    //     const swipeDisabled = true;
+    //     const hiddenSelector = true;
+
+    //     const wrapper = propsFactory({ type, src, id, thumbnailImage, slideDisabled, thumbnailHtml, swipeDisabled, hiddenSelector });
+    //     expect(removeComents(wrapper.html())).toBe(`<div data-src="${src}" id="${id}" data-thumbnail-image="${thumbnailImage}" data-thumbnail-html="${thumbnailHtml}" data-disabled="${slideDisabled}" data-swipe-disabled="${swipeDisabled}" data-hidden-selector="${hiddenSelector}"></div>`);
+    // });
 });
