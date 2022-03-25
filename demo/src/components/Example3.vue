@@ -85,7 +85,12 @@
 </template>
 <script>
 export default {
-  name: 'ExamplePage3'
+    name: 'ExamplePage3',
+    mounted() {
+        if (window.PR) {
+            window.PR.prettyPrint();
+        }
+    }
 }
 </script>
 
