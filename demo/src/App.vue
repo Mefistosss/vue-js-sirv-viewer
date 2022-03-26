@@ -67,6 +67,8 @@ body {
     max-height: 100%;
     height: 100%;
     margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #app {
@@ -107,6 +109,10 @@ pre {
     margin-top: 8px;
 }
 
+button.btn:hover {
+    background: #20a0ff;
+}
+
 .window {
     background-color: #f6f9fc;
     border-radius: 12px;
@@ -134,7 +140,7 @@ p {
     padding-left: 10px;
     box-sizing: border-box;
 }
-.code .wrapper {
+.wrapper {
     overflow: auto;
     color: #595959;
     background-color: #f3f3f3;
