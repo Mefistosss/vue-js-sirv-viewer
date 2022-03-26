@@ -18,8 +18,7 @@ module.exports = defineConfig({
     'resolve-alias': {
       symlinks: false,
       alias: {
-        // plugin: path.resolve(__dirname, '../dist/index.js')
-        plugin: path.resolve(__dirname, '../dist/VueJsSirvViewer.umd.js'),
+        plugin: path.resolve(__dirname, '../dist/index.umd.js'),
         vue: path.resolve(`./node_modules/vue`)
       }
     }

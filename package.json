@@ -6,7 +6,7 @@
   "author": "sergey <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name VueJsSirvViewer src/index.js",
+    "build": "vue-cli-service build --target lib --name index src/index.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },

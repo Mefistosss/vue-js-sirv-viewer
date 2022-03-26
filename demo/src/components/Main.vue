@@ -34,7 +34,7 @@ Vue.use(SirvViewer)
             <div><span>Slots, options</span></div>
         </a>
         <a href="#/example5">
-            <div><span>*.view</span></div>
+            <div><span>*.view file</span></div>
         </a>
         <a href="#/example6">
             <div><span>Events, API</span></div>
