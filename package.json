@@ -10,7 +10,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
   "dependencies": {
     "core-js": "^3.8.3"
   },
