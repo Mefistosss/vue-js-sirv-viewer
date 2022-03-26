@@ -1,9 +1,8 @@
 <template>
     <p>ExamplePage2</p>
-    <!-- <vue-js-sirv-viewer data-src="https://test1.sirv.com/3d-car-club/03.jpg" style="width: 70%;"></vue-js-sirv-viewer> -->
     <div class="example">
         <div class="tool">
-            <sirv-media-viewer style="width: 500px;">
+            <sirv-media-viewer>
                 <div data-src="https://demo.sirv.com/demo/snug/teal-b-throw.jpg" data-type="zoom"></div>
                 <div data-src="https://demo.sirv.com/demo/snug/teal.spin"></div>
                 <div data-src="https://demo.sirv.com/demo/snug/unpacked.jpg" data-type="zoom"></div>
@@ -62,7 +61,12 @@
 
 <script>
 export default {
-    name: 'ExamplePage2'
+    name: 'ExamplePage2',
+    mouted() {
+        if (window.PR) {
+            window.PR.prettyPrint();
+        }
+    }
 }
 </script>
 

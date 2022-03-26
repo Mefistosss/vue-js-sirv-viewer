@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Viewer Component for Vue.js",
-  "author": "euvl <sergeypo@protonmail.com>",
+  "author": "sergey <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueJsSirvViewer src/index.js",
@@ -12,7 +12,9 @@
   },
   "main": "dist/index.js",
   "dependencies": {
-    "core-js": "^3.8.3",
+    "core-js": "^3.8.3"
+  },
+  "peerDependencies": {
     "vue": "^3.2.13"
   },
   "devDependencies": {

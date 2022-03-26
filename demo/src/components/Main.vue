@@ -51,6 +51,7 @@ export default {
 <style scoped>
 .example-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 a {

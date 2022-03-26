@@ -17,7 +17,12 @@
 
 <script>
 export default {
-  name: 'ExamplePage5'
+    name: 'ExamplePage5',
+    mouted() {
+        if (window.PR) {
+            window.PR.prettyPrint();
+        }
+    }
 }
 </script>
 

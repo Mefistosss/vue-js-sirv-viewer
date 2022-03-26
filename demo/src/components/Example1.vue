@@ -1,6 +1,5 @@
 <template>
     <p>Simple Example</p>
-    <!-- <vue-js-sirv-viewer data-src="https://test1.sirv.com/3d-car-club/03.jpg" style="width: 70%;"></vue-js-sirv-viewer> -->
     <div class="example">
         <div class="tool">
             <sirv-media-viewer
@@ -67,15 +66,16 @@
 
 <script>
 export default {
-  name: 'ExamplePage1'
+    name: 'ExamplePage1',
+    mouted() {
+        if (window.PR) {
+            window.PR.prettyPrint();
+        }
+    }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* pre {
-    line-height: 1.5;
-    text-align: left;
-    padding: 10px;
-} */
+
 </style>

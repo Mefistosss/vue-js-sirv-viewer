@@ -43,7 +43,7 @@ export default {
         },
 
         backButton() {
-            return this.currentPath !== '#/';
+            return !['#/', ''].includes(this.currentPath);
         }
     },
     mounted() {
@@ -132,6 +132,7 @@ p {
 
 .code {
     padding-left: 10px;
+    box-sizing: border-box;
 }
 .code .wrapper {
     overflow: auto;
@@ -161,12 +162,11 @@ p {
     .tool, .code {
         width: 100%;
     }
-    
 }
 
 @media (min-width: 1200px) {
     .code {
-        width: 100%;
+        width: calc(100% - 600px);
     }
 }
 
