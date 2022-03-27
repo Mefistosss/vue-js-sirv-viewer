@@ -1,8 +1,7 @@
 {
   "name": "vue-js-sirv-viewer",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Viewer Component for Vue.js",
+  "version": "1.0.beta1",
+  "description": "Sirv Media Viewer for Vue.js",
   "author": "sergey <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
