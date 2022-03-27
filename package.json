@@ -63,11 +63,11 @@
     "not ie 11"
   ],
   "bugs": {
-    "url": "https://github.com/Mefistosss/vue-js-smv-viewer/issues"
+    "url": "https://github.com/Mefistosss/vue-js-sirv-viewer/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mefistosss/vue-js-smv-viewer.git"
+    "url": "https://github.com/Mefistosss/vue-js-sirv-viewer.git"
   }
 }
