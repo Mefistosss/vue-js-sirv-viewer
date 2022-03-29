@@ -1,5 +1,7 @@
 # Vue.js Sirv Media Viewer
 
+[![Test](https://github.com/Mefistosss/vue-js-sirv-viewer/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/Mefistosss/vue-js-sirv-viewer/actions/workflows/test.yml)
+
 Easy to use, highly customizable Vue.js Sirv Media Viewer library.
 
 Copy and paste this script anywhere in your HTML, usually before ```</head>```
