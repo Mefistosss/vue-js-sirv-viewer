@@ -8,11 +8,13 @@ Copy and paste this script anywhere in your HTML, usually before ```</head>```
 ```
 <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
 ```
+or you can use [npm module](https://www.npmjs.com/package/sirv-media-viewer-script)
 
-Using plugin
+## install
 ```
 npm install --save vue-js-sirv-viewer
 ```
+## usage
 ```
 import SirvViewer from 'vue-js-sirv-viewer';
 Vue.use(SirvViewer);
