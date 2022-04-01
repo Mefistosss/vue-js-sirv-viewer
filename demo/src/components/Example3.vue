@@ -70,13 +70,13 @@
                 <li><pre class="string">id</pre> - Slide id [String]</li>
                 <li><pre class="string">src</pre> - Source [String]</li>
                 <li><pre class="string">dataOptions</pre> - Local slide options [Object]</li>
-                <li><pre class="string">type</pre> - Type of slide [String]. All types <pre class="string">spin, zoom, image, 'youtube', 'vimeo', 'video', 'html'</pre></li>
+                <li><pre class="string">type</pre> - Type of slide [String]. The available props are: <pre class="string">spin, zoom, image, 'youtube', 'vimeo', 'video', 'html'</pre></li>
                 <li><pre class="string">dataThumbnailImage</pre> - Custom thumbnail image [String]</li>
                 <li><pre class="string">dataThumbnailHtml</pre> - Custom thumbnail html [String]</li>
                 <li><pre class="string">dataDisabled</pre> - Disable slide [Boolean]</li>
                 <li><pre class="string">dataSwipeDisabled</pre> - Disable slide swipe [Boolean]</li>
                 <li><pre class="string">dataHiddenSelector</pre> - Hide selector [Boolean]</li>
-                <li><pre class="string">dataPinned</pre> - Pinned selector [String]. <pre class="string">left, right</pre></li>
+                <li><pre class="string">dataPinned</pre> - Pinned selector [String]. The available props are: <pre class="string">left, right</pre></li>
                 <li><pre class="string">staticImage</pre> - Static image [Boolean].</li>
             </ul>
         </p>
