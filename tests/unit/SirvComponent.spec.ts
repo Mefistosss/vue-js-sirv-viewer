@@ -1,13 +1,13 @@
 import { shallowMount } from '@vue/test-utils';
 import SirvComponent from '@/components/SirvComponent.vue';
 
-const propsFactory = (values = {}) => {
+const propsFactory = (values: object = {}) => {
     return shallowMount(SirvComponent, {
         props: { ...values }
     });
 };
 
-const removeComents = (str) => {
+const removeComents = (str: string): string => {
     return str.replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/g, '');
 };
 

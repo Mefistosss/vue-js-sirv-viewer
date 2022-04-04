@@ -1,4 +1,4 @@
-const isImage = (src) => {
+const isImage = (src = ''): boolean => {
     return /\.(jpg|jpeg|png|webp|gif|svg)$/.test(src);
 };
 

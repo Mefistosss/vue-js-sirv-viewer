@@ -1,4 +1,4 @@
-const isSpin = (src) => {
+const isSpin = (src = ''): boolean => {
     return /\.spin$/.test(src);
 };
 

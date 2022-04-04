@@ -1,4 +1,4 @@
-const isVimeo = (src) => {
+const isVimeo = (src = ''): boolean => {
     return /^(https?:)?\/\/((www|player)\.)?vimeo\.com\//.test(src);
 };
 

@@ -33,7 +33,8 @@
     />
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import SirvComponent from './SirvComponent.vue';
 import ots from '../utils/optionsToString';
 import isSpin from '../utils/isSpin';
@@ -42,7 +43,21 @@ import isYoutube from '../utils/isYoutube';
 import isVimeo from '../utils/isVimeo';
 import isVideo from '../utils/isVideo';
 
-const getComponentType = (src) => {
+interface Slide {
+    src?: string | undefined
+    type?: string
+    dataOptions?: object
+    id?: string | undefined
+    dataPinned?: string
+    dataThumbnailImage?: string
+    dataThumbnailHtml?: string
+    dataDisabled?: string | null
+    dataSwipeDisabled?: string | null
+    dataHiddenSelector?: string | null
+    staticImage?: string | boolean | null
+}
+
+const getComponentType = (src?: string): string => {
     let result = 'html';
 
     if (isSpin(src)) {
@@ -61,7 +76,7 @@ const getComponentType = (src) => {
     return result;
 }
 
-const setNullByDefault = (value) => {
+const setNullByDefault = (value: any): any => {
     if (!value) {
         value = null;
     }
@@ -69,32 +84,33 @@ const setNullByDefault = (value) => {
     return value;
 };
 
-export default {
+export default defineComponent({
     name: 'SirvMediaViewer',
     inheritAttrs: true,
     components: { SirvComponent },
-    // state: {
-    //   l: 0
-    // },
     props: {
         options: {
             type: Object,
             default() { return { autostart: 'off' }; }
         },
+
         dataBgSrc: {
             type: String,
             default: null
         },
+
         dataSrc: {
             type: String,
             default() {
                 return null;
             }
         },
+
         slides: {
-            type: [Array, String],
+            type: Array,
             default() { return []; }
         },
+
         id: {
             type: String,
             default() { return 'vue-viewer-' + (+new Date()); }
@@ -102,23 +118,23 @@ export default {
     },
 
     created() {
-        this.isImage = isImage;
-        this.lazyImage = this.dataSrc && isImage(this.dataSrc) || this.dataBgSrc;
+        // this.lazyImage = this.dataSrc && isImage(this.dataSrc) || this.dataBgSrc;
     },
 
-    setup() {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    setup() {},
 
-    },
     computed: {
-        parsedComponents () {
+        parsedComponents (): any[] {
             if (this.dataSrc || this.dataBgSrc) {
                 return [];
             } else {
                 let c = this.slides;
+
                 if (!Array.isArray(c)) {
                     c = [c];
                 }
-                c = c.map((v) => {
+                c = c.map((v: Slide) => {
                     if (typeof v === 'string') {
                         v = { src: v };
                     }
@@ -126,9 +142,6 @@ export default {
                     if (!v.type) {
                         v.type = getComponentType(v.src);
                     }
-
-            // :id="slide.id"
-            // :staticImage="slide.dataStaticImage"
 
                     v.dataOptions = setNullByDefault(v.dataOptions);
                     v.id = setNullByDefault(v.id);
@@ -164,32 +177,42 @@ export default {
         },
 
         stringOptions () {
-            let opt = this.options;
+            let opt: object = this.options;
 
-            if (!opt.autostart) {
-                opt.autostart = 'off';
+            if (!(opt as any).autostart) {
+                (opt as any).autostart = 'off';
             }
 
-            return ots(this.options);
+            return ots(opt);
         }
     },
+
     methods: {
+        isImage: isImage,
+
         start() {
-            window.Sirv.start('#' + this.id);
+            (window as any).Sirv.start('#' + this.id);
         },
+
         stop() {
-            window.Sirv.stop('#' + this.id);
+            (window as any).Sirv.stop('#' + this.id);
         },
+
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         on() {},
+
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         off() {}
     },
+
     mounted() {
         this.start();
     },
+
     beforeUnmount() {
         this.stop();
     }
-}
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
