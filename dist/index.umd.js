@@ -129,7 +129,7 @@ if (typeof window !== 'undefined') {
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(203);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/ts-loader/index.js??clonedRuleSet-83.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/SirvViewer.vue?vue&type=template&id=0f332bd4&ts=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/ts-loader/index.js??clonedRuleSet-83.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/SirvViewer.vue?vue&type=template&id=2718a833&ts=true
 
 var _hoisted_1 = ["data-options", "id", "data-src", "data-bg-src"];
 var _hoisted_2 = ["id", "data-src", "data-options"];
@@ -142,8 +142,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             "data-options": _ctx.stringOptions,
             id: _ctx.id,
             "data-src": _ctx.dataSrc,
-            "data-bg-src": _ctx.dataBgSrc,
-            style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.normalizeStyle)(_ctx.$attrs.style)
+            "data-bg-src": _ctx.dataBgSrc
         }, [
             ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderList)(_ctx.parsedComponents, function (slide) {
                 return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createBlock)(_component_sirv_component, {
@@ -164,7 +163,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             (_ctx.parsedComponents.length == 0)
                 ? (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "default", { key: 0 })
                 : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)
-        ], 12, _hoisted_1))
+        ], 8, _hoisted_1))
         : ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("img", {
             key: 1,
             class: "Sirv",
@@ -174,7 +173,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }, null, 8, _hoisted_2));
 }
 
-;// CONCATENATED MODULE: ./src/components/SirvViewer.vue?vue&type=template&id=0f332bd4&ts=true
+;// CONCATENATED MODULE: ./src/components/SirvViewer.vue?vue&type=template&id=2718a833&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/ts-loader/index.js??clonedRuleSet-83.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/SirvComponent.vue?vue&type=template&id=6356b242&ts=true
 
@@ -433,7 +432,6 @@ var setNullByDefault = function (value) {
     setup: function () { },
     computed: {
         parsedComponents: function () {
-            // let c = this.slides;
             if (this.dataSrc || this.dataBgSrc) {
                 return [];
             }

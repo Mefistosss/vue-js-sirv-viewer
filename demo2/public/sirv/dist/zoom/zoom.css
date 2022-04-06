@@ -1,0 +1,190 @@
+.PREFIX-zoom-view {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 0 !important;
+  -webkit-backface-visibility: hidden !important;
+          backface-visibility: hidden !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  touch-action: pan-y;
+}
+
+.PREFIX-zoom-view::after {
+  display: inline-block;
+  height: 100%;
+  content: '';
+  vertical-align: middle;
+}
+
+.PREFIX-zoom-view .zoom-loader {
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+}
+
+.PREFIX-zoom-view > img.PREFIX-zoomed-in {
+  visibility: hidden !important;
+}
+
+.PREFIX-zoom-view .sirv-zoom {
+  z-index: 126;
+}
+
+.PREFIX .PREFIX-slides-box .PREFIX-zoom-view > img {
+  display: inline-block !important;
+  position: relative !important;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.zoom-controls {
+  display: flex;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  flex-flow: row-reverse;
+  /* width: 28px; */
+  height: 28px;
+  z-index: 168;
+}
+
+.zoom-controls > button {
+  background-color: rgba(245, 245, 245, 0.9);
+  color: #777;
+}
+
+.zoom-controls > button::before, .zoom-controls > button::after {
+  transition: opacity .2s linear;
+  opacity: .65;
+}
+
+.zoom-controls > button:hover::before, .zoom-controls > button:hover::after {
+  opacity: 1;
+}
+
+.zoom-controls > button.disable::before, .zoom-controls > button.disable::after {
+  opacity: .2;
+}
+
+.zoom-controls > button + button {
+  margin-right: 4px;
+}
+
+.zoom-controls .zoom-in,
+.zoom-controls .zoom-out,
+.zoom-controls .zoom-close {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  /* margin-bottom: 5px; */
+  padding: 0;
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+  /* background-color: #f5f5f5; */
+  outline: 0;
+  cursor: pointer;
+  /*     -webkit-transition: opacity .2s linear;
+                    transition: opacity .2s linear;
+        */
+}
+
+.zoom-controls .zoom-in::before,
+.zoom-controls .zoom-in::after,
+.zoom-controls .zoom-out::before,
+.zoom-controls .zoom-close::before,
+.zoom-controls .zoom-close::after {
+  transform: translate3d(-50%, -50%, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  border-top: 2px solid currentcolor;
+  font-size: 0;
+  line-height: 100%;
+  content: '';
+  /*height: 0.5px;*/
+  /*height: 1px;*/
+}
+
+.zoom-controls .zoom-in::after,
+.zoom-controls .zoom-close::after {
+  transform-origin: center;
+  border-left: 1px solid;
+}
+
+.zoom-controls .zoom-in::after {
+  transform: translate3d(-50%, -50%, 0) rotateZ(-90deg);
+}
+
+.zoom-controls .zoom-close {
+  display: none !important;
+}
+
+.zoom-controls .zoom-close::before {
+  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+.zoom-controls .zoom-close::after {
+  transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+}
+
+/*
+.PREFIX:hover {
+    .zoom-controls {
+        .zoom-in, .zoom-out, .zoom-close {
+            opacity: 0.6;
+        }
+    }
+    .zoom-controls {
+        .zoom-in:hover, .zoom-out:hover, .zoom-close:hover {
+            opacity: 0.999999;
+        }
+    }
+}
+
+.PREFIX-mobile.PREFIX {
+    .zoom-controls {
+        .zoom-in, .zoom-out, .zoom-close {
+            opacity: 0.999999 !important;
+        }
+    }
+}
+
+.PREFIX:hover {
+    .zoom-controls {
+        .zoom-in.disable, .zoom-out.disable, .zoom-close.disable {
+            opacity: 0.2 !important;
+        }
+    }
+}
+
+.PREFIX-mobile.PREFIX {
+    .zoom-controls {
+        .zoom-in.disable, .zoom-out.disable, .zoom-close.disable {
+            opacity: 0.2 !important;
+        }
+    }
+}*/
+
+.smv .smv-slides-box .smv-slides .smv-slide .smv-content .sirv-hotspot-container {
+  position: absolute !important;
+  pointer-events: none;
+}
+
+.smv .smv-slides-box .smv-slides .smv-slide .smv-content .sirv-hotspot-container.sirv-hotspot-overwrite-pointer-event {
+  pointer-events: auto !important;
+}

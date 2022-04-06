@@ -1,0 +1,7 @@
+.PREFIX .PREFIX-slides-box .PREFIX-slides .PREFIX-slide .PREFIX-content .sirv-hotspot-container {
+  position: absolute !important;
+}
+
+.PREFIX .PREFIX-slides-box .PREFIX-slides .PREFIX-slide .PREFIX-content .sirv-hotspot-container.sirv-hotspot-overwrite-pointer-event {
+  pointer-events: auto !important;
+}

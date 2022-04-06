@@ -12,7 +12,12 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
+    "noImplicitAny": false,
+    // "declaration": true,
+    // "declarationDir": "dist",
+    // "emitDeclarationOnly": true,
     "baseUrl": ".",
+    "typeRoots": ["./types", "./node_modules/@types"],
     "types": [
       "webpack-env",
       "jest"
@@ -37,6 +42,8 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "../types",
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }

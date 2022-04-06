@@ -1,0 +1,206 @@
+.PREFIX-sirv-video .vjs-menu li.vjs-menu-item:hover, .PREFIX-sirv-video .vjs-menu li.vjs-menu-item:focus, .PREFIX-sirv-video .vjs-menu li.vjs-selected, .PREFIX-sirv-video .vjs-menu li.vjs-selected:hover, .PREFIX-sirv-video .vjs-menu li.vjs-selected:focus, .PREFIX-sirv-video .js-focus-visible .vjs-menu li.vjs-menu-item:hover, .PREFIX-sirv-video .js-focus-visible .vjs-menu li.vjs-selected:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+.PREFIX-sirv-video .vjs-playback-rate .vjs-playback-rate-value, .PREFIX-sirv-video .vjs-quality-selector .vjs-icon-placeholder {
+  font-size: 1.2em;
+  line-height: 2.5em;
+  pointer-events: none;
+}
+
+.PREFIX-sirv-video.video-js .vjs-control-bar, .PREFIX-sirv-video.video-js .vjs-volume-vertical,
+.PREFIX-sirv-video.video-js .vjs-big-play-button, .PREFIX-sirv-video.video-js .vjs-menu-button .vjs-menu-content {
+  background-color: rgba(55, 58, 60, 0.8);
+}
+
+.PREFIX-sirv-video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.PREFIX-sirv-video *:focus {
+  outline: none;
+}
+
+.PREFIX-sirv-video .vjs-poster {
+  background-color: transparent;
+}
+
+.PREFIX-sirv-video .vjs-button {
+  display: inline-block;
+  transition: none;
+  border: 0 !important;
+  background: 0 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  text-transform: none;
+  appearance: none;
+}
+
+.PREFIX-sirv-video .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  width: 1.2em;
+  height: 1.2em;
+  margin-top: -.6em;
+  margin-left: -.6em;
+  border: 0.04em solid transparent;
+  border-radius: 1em;
+  color: inherit !important;
+  font-size: 5em;
+  letter-spacing: 0 !important;
+  line-height: 1.2em;
+  box-shadow: none;
+}
+
+.PREFIX-sirv-video:hover .vjs-big-play-button {
+  border-color: transparent;
+}
+
+.PREFIX-sirv-video.vjs-controls-disabled .vjs-big-play-button,
+.PREFIX-sirv-video.vjs-has-started .vjs-big-play-button {
+  display: block;
+  transition: opacity .25s;
+}
+
+.PREFIX-sirv-video.vjs-has-started.vjs-playing .vjs-big-play-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.PREFIX-sirv-video.vjs-has-started.vjs-paused .vjs-big-play-button {
+  opacity: 1;
+}
+
+.PREFIX-sirv-video .vjs-quality-selector .vjs-icon-placeholder {
+  line-height: 1;
+}
+
+.PREFIX-sirv-video.video-js {
+  background-color: transparent;
+  color: #fff;
+  font-size: 10px;
+}
+
+.PREFIX-sirv-video.video-js:not(.vjs-has-started) .vjs-tech {
+  opacity: .001;
+}
+
+.PREFIX-sirv-video.video-js .vjs-control-bar *:last-child .vjs-menu {
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+.PREFIX-sirv-video.video-js .vjs-control-bar .vjs-control {
+  color: inherit !important;
+  box-shadow: none;
+}
+
+.PREFIX-sirv-video.video-js .vjs-control-bar .vjs-control .vjs-icon-placeholder {
+  font-family: VideoJS;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.PREFIX-sirv-video.video-js .vjs-control-bar .vjs-control.vjs-quality-selector, .PREFIX-sirv-video.video-js .vjs-control-bar .vjs-control.vjs-resolution {
+  margin-right: .4em;
+}
+
+.PREFIX-sirv-video.video-js.vjs-has-started .vjs-control-bar {
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
+.PREFIX-sirv-video.video-js .vjs-menu-button {
+  padding: 0;
+}
+
+.PREFIX-sirv-video.video-js .vjs-slider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.PREFIX-sirv-video.video-js .vjs-progress-control .vjs-progress-holder {
+  transform: scaleY(0.6);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 1, 1);
+  font-size: 1.6666666667em;
+}
+
+.PREFIX-sirv-video.video-js .vjs-progress-control .vjs-play-progress::before {
+  transform: scale(0);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.PREFIX-sirv-video.video-js .vjs-progress-control:hover .vjs-progress-holder,
+.PREFIX-sirv-video.video-js .vjs-progress-control:hover .vjs-play-progress::before {
+  transform: none;
+}
+
+.PREFIX-sirv-video.video-js .vjs-load-progress {
+  background-color: transparent;
+}
+
+.PREFIX-sirv-video.video-js .vjs-load-progress div {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.PREFIX-sirv-video.video-js .vjs-menu {
+  left: 50%;
+  width: 8em;
+  transform: translateX(-50%);
+}
+
+.PREFIX-sirv-video.video-js .vjs-menu .vjs-menu-item {
+  padding: .6em .6em .3em;
+  font-size: 1.2em;
+  text-align: left;
+  text-transform: none;
+}
+
+.PREFIX-sirv-video.video-js .vjs-menu .vjs-menu-item ~ .vjs-menu-item {
+  padding-top: .3em;
+}
+
+.PREFIX-sirv-video.video-js .vjs-menu .vjs-menu-item::before {
+  padding: 0 1em;
+  font-family: VideoJS;
+  font-size: .66em;
+  content: '\f111';
+  opacity: 0;
+}
+
+.PREFIX-sirv-video.video-js .vjs-menu .vjs-menu-item.vjs-selected::before {
+  opacity: 1;
+}
+
+.PREFIX-sirv-video.video-js .vjs-volume-panel .vjs-volume-control.vjs-volume-vertical {
+  transition: visibility .1s, opacity .1s, height .1s, width .1s, left 0s, top 0s;
+}
+
+:root:not(.mobile-magic) .PREFIX-sirv-video.video-js.vjs-has-started:not(:hover) .vjs-control-bar {
+  opacity: 0;
+}
+
+.PREFIX-disabled-action .vjs-tech {
+  pointer-events: none !important;
+}
+
+.PREFIX-disabled-action .vjs-poster {
+  pointer-events: none !important;
+}
+
+.PREFIX .vjs-quality-selector .vjs-menu-content .vjs-menu-title {
+  display: none;
+}
+
+.PREFIX .PREFIX-q-last .vjs-quality-selector .vjs-menu,
+.PREFIX .PREFIX-s-last .vjs-playback-rate .vjs-menu {
+  right: 0;
+  left: auto !important;
+  transform: none !important;
+}

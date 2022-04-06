@@ -1,34 +1,14 @@
 <template>
     <button v-if="backButton" v-on:click="back" class="btn">Back</button>
     <div class="window">
-        <component :is="currentView" />
+      <router-view/>
+        <!-- <component :is="currentView" /> -->
     </div>
 </template>
 
-<script>
-import Main from './components/Main.vue';
-import Example1 from './components/Example1.vue';
-import Example2 from './components/Example2.vue';
-import Example3 from './components/Example3.vue';
-import Example4 from './components/Example4.vue';
-import Example5 from './components/Example5.vue';
-import Example6 from './components/Example6.vue';
-import Example7 from './components/Example7.vue';
-import Example8 from './components/Example8.vue';
-
-const routes = {
-    '/': Main,
-    '/example1': Example1,
-    '/example2': Example2,
-    '/example3': Example3,
-    '/example4': Example4,
-    '/example5': Example5,
-    '/example6': Example6,
-    '/example7': Example7,
-    '/example8': Example8
-};
-
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
     name: 'App',
     data() {
         return {
@@ -38,12 +18,13 @@ export default {
     components: {},
 
     computed: {
-        currentView() {
-            return routes[this.currentPath.slice(1) || '/'] || Main
-        },
+        // currentView() {
+        //     return routes[this.currentPath.slice(1) || '/'] || Main
+        // },
 
         backButton() {
-            return !['#/', ''].includes(this.currentPath);
+            return false;
+            // return !['#/', ''].includes(this.currentPath);
         }
     },
     mounted() {
@@ -57,7 +38,7 @@ export default {
             window.location.hash = this.currentPath;
         }
     }
-}
+});
 </script>
 
 <style>

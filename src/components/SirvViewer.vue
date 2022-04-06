@@ -5,7 +5,6 @@
         :id="id"
         :data-src="dataSrc"
         :data-bg-src="dataBgSrc"
-        :style="$attrs.style"
     >
         <sirv-component
             v-for="slide in parsedComponents"

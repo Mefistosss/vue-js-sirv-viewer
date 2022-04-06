@@ -1,0 +1,257 @@
+.sirv-zoom {
+  position: absolute;
+  -webkit-backface-visibility: hidden !important;
+          backface-visibility: hidden !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+  outline: 0 !important;
+  z-index: 999999999;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.sirv-zoom .sirv-outside-zoom {
+  background: #fff;
+  box-shadow: 0 0 3px rgba(153, 153, 153, 0.5);
+}
+
+.sirv-zoom .sirv-circle-zoom {
+  border: 0;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sirv-zoom .sirv-circle-zoom::before {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid rgba(153, 153, 153, 0.7);
+  border-radius: 100%;
+  background: transparent;
+  box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.3);
+  content: '';
+  z-index: 126;
+}
+
+.sirv-zoom .sirv-zoom-wrapper {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.sirv-zoom .sirv-zoom-wrapper .sirv-zoom-image-wrapper {
+  position: absolute;
+  overflow: hidden;
+}
+
+.sirv-zoom .sirv-zoom-wrapper .sirv-zoom-image-wrapper > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  user-drag: none;
+}
+
+.sirv-zoom .sirv-zoom-wrapper .sirv-deepzoom {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 42;
+  /*& > div img {
+                @include position(absolute);
+            }*/
+}
+
+.sirv-zoom .sirv-zoom-wrapper .sirv-deepzoom > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sirv-zoom .sirv-zoom-wrapper .sirv-deepzoom > div canvas {
+  top: 0;
+  left: 0;
+}
+
+.zoom-helper {
+  position: fixed;
+  border-radius: 4px;
+  display: inline-block;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc9c9;
+  background-color: #eaeaea;
+  box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.zoom-helper .z-loaded-color {
+  background-color: #87bd89 !important;
+}
+
+.zoom-helper .z-loading-color {
+  background-color: #a99cef !important;
+}
+
+.zoom-helper .z-canceled-color {
+  background-color: #f19c9c !important;
+}
+
+.zoom-helper .z-helper-head {
+  margin-bottom: 9px;
+}
+
+.zoom-helper .z-level,
+.zoom-helper .z-head,
+.zoom-helper .z-body {
+  position: relative;
+}
+
+.zoom-helper .z-level {
+  border-radius: 4px;
+  margin-bottom: 9px;
+  padding: 10px;
+  background-color: #d4d3d3;
+  box-sizing: border-box;
+}
+
+.zoom-helper .z-head {
+  margin-bottom: 9px;
+}
+
+.zoom-helper .z-body {
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.zoom-helper .z-tile {
+  position: absolute;
+  display: inline-block;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+}
+
+.zoom-helper .z-status {
+  border-radius: 50%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  background-color: #e87979;
+  box-sizing: border-box;
+}
+
+.zoom-helper .z-status.shown {
+  background-color: #66ca66 !important;
+}
+
+.sirv-zoom-map {
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 16px;
+  left: 16px;
+  width: 200px;
+  height: 150px;
+  border: 1px solid #bdbdbd;
+  overflow: hidden;
+  z-index: 126;
+  cursor: pointer;
+}
+
+.sirv-zoom-map .sirv-zoom-map-lens {
+  position: absolute;
+  box-sizing: border-box;
+  top: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #fff;
+  z-index: 42;
+}
+
+.sirv-zoom-map .sirv-zoom-map-lens::before, .sirv-zoom-map .sirv-zoom-map-lens::after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.sirv-zoom-map .sirv-zoom-map-lens::before {
+  box-sizing: content-box;
+  border-width: 1em;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.6);
+  -o-border-image: initial;
+     border-image: initial;
+  top: -1em;
+  left: -1em;
+}
+
+.sirv-zoom-map .sirv-zoom-map-lens::after {
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  -o-border-image: initial;
+     border-image: initial;
+}
+
+.sirv-zoom-map > img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sirv-zoom-lens-wrapper,
+.sirv-zoom-lens {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sirv-zoom-lens-wrapper {
+  background-color: rgba(153, 153, 153, 0.4);
+  overflow: hidden;
+  z-index: 9999999999;
+}
+
+.sirv-zoom-lens {
+  box-shadow: 0 0 3px rgba(153, 153, 153, 0.5);
+  overflow: hidden;
+}
+
+.sirv-zoom-lens img {
+  max-width: none !important;
+  max-height: none !important;
+  transition: none !important;
+}
+
+.sirv-filter-bw {
+  filter: grayscale(0.5) opacity(0.5);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='linear' slope='0.6'/></feComponentTransfer></filter></svg>#grayscale");
+}

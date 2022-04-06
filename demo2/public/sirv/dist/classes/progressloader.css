@@ -1,0 +1,111 @@
+.PREFIX-progress-loader {
+  pointer-events: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-wrapper,
+.PREFIX-progress-loader .PREFIX-pl-text-wrapper,
+.PREFIX-progress-loader .PREFIX-pl-indicator,
+.PREFIX-progress-loader .PREFIX-pl-circle-wrapper,
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-pie,
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-slice {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-wrapper,
+.PREFIX-progress-loader .PREFIX-pl-text-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-wrapper {
+  transform: scale(0);
+  transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.57, 1.47), opacity 0.2s linear;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-indicator,
+.PREFIX-progress-loader .PREFIX-pl-circle-wrapper,
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-pie,
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-slice {
+  position: absolute;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-circle-wrapper,
+.PREFIX-progress-loader .PREFIX-pl-indicator {
+  z-index: 1;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-circle-wrapper {
+  -webkit-animation: sirv-pl-loader-rotate 2s infinite linear;
+          animation: sirv-pl-loader-rotate 2s infinite linear;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-pie,
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-slice {
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-pie {
+  z-index: 1;
+  stroke: rgba(255, 255, 255, 0.3);
+}
+
+.PREFIX-progress-loader .PREFIX-pl-indicator .PREFIX-pl-slice {
+  z-index: 2;
+  stroke: #fff;
+  stroke-linecap: round;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-text-wrapper {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+  z-index: 2;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-text-wrapper::after {
+  display: inline-block;
+  height: 100%;
+  content: '';
+  vertical-align: middle;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-text-wrapper .PREFIX-pl-text {
+  display: inline;
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+}
+
+.PREFIX-progress-loader .PREFIX-pl-text-wrapper .PREFIX-pl-text .PREFIX-pl-text-percent {
+  font-size: .7em;
+}
+
+@-webkit-keyframes sirv-pl-loader-rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes sirv-pl-loader-rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
