@@ -1,13 +1,20 @@
 import SirvViewer from './components/SirvViewer.vue';
 import { App } from 'vue';
-import Sirv from '../types/Sirv';
+// import Sirv from '../types/Sirv';
+import '../types'
 
-declare global {
-    interface Window {
-        Sirv: Sirv,
-        Vue: App
-    }
-}
+// declare global {
+//     interface Window {
+//         Sirv?: Sirv,
+//         Vue: App
+//     }
+// }
+
+// declare module 'vue' {
+//     interface ComponentCustomProperties {
+//         $smv: Sirv
+//     }
+// }
 
 const VueJsSirvViewer = {
     install(Vue: App) {

@@ -1,25 +1,22 @@
+import Sirv from './Sirv';
+import { App } from 'vue';
+
 declare const VueJsSirvViewer: {
-    install(Vue: any): void;
+    install(Vue: App): void;
 };
-
-declare interface Sirv {
-    getInstance: (query?: string) => any
-    start: (query?: string) => any
-    stop: (query?: string) => any
-}
-
-declare module 'vue/types/vue' {
-    interface Vue {
-        $smv: Sirv
-    }
-}
 
 declare global {
     interface Window {
-        Sirv: Sirv
+        Sirv?: Sirv,
+        Vue: App
     }
 }
 
-export {};
+declare module '@vue/runtime-core' {
+    interface ComponentCustomProperties {
+        $smv?: Record<Sirv>;
+    }
+} 
 
+export {};
 export default VueJsSirvViewer;
