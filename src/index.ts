@@ -1,27 +1,12 @@
-import SirvViewer from './components/SirvViewer.vue';
-import { App } from 'vue';
-// import Sirv from '../types/Sirv';
-import '../types'
+import { App, Plugin } from 'vue';
+import SirvMediaViewer from './components/SirvMediaViewer.vue';
 
-// declare global {
-//     interface Window {
-//         Sirv?: Sirv,
-//         Vue: App
-//     }
-// }
-
-// declare module 'vue' {
-//     interface ComponentCustomProperties {
-//         $smv: Sirv
-//     }
-// }
-
-const VueJsSirvViewer = {
+const VueJsSirvViewer: Plugin = {
     install(Vue: App) {
+        Vue.config.globalProperties.$smv = window.Sirv;
         // Let's register our component globally
         // https://vuejs.org/v2/guide/components-registration.html
-        Vue.component("sirv-media-viewer", SirvViewer);
-        Vue.config.globalProperties.$smv = window.Sirv;
+        Vue.component("sirv-media-viewer", SirvMediaViewer);
     }
 };
 

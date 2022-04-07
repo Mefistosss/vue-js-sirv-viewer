@@ -9,9 +9,11 @@ declare global {
 }
 
 export default defineComponent({
+// export default {
     mouted() {
         if (window.PR) {
             window.PR.prettyPrint();
         }
     }
+// }
 });

@@ -13,11 +13,12 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "noImplicitAny": false,
-    // "declaration": true,
-    // "declarationDir": "dist",
-    // "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true,
+    "plugins": [{ "name": "ts-vue-plugin" }],
     "baseUrl": ".",
-    "typeRoots": ["./types", "./node_modules/@types"],
+    "typeRoots": ["./src", "./node_modules/@types"],
     "types": [
       "webpack-env",
       "jest"
@@ -42,8 +43,9 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "../types",
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "./demo",
+    "./demo2"
   ]
 }

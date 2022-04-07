@@ -29,7 +29,7 @@
 <script lang="ts">
 // v-if="['spin', 'zoom', 'youtube', 'vimeo', 'video', 'html'].includes(type)"
 import { defineComponent } from 'vue';
-import ots from '../utils/optionsToString';
+import ots from '@/utils/optionsToString';
 
 export default defineComponent({
     name: 'SirvComponent',
@@ -118,6 +118,4 @@ export default defineComponent({
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
+<style scoped></style>

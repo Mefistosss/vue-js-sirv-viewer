@@ -1,13 +1,13 @@
 <template>
     <button v-if="backButton" v-on:click="back" class="btn">Back</button>
     <div class="window">
-      <router-view/>
-        <!-- <component :is="currentView" /> -->
+      <router-view></router-view>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 export default defineComponent({
     name: 'App',
     data() {
@@ -15,8 +15,6 @@ export default defineComponent({
             currentPath: window.location.hash
         };
     },
-    components: {},
-
     computed: {
         // currentView() {
         //     return routes[this.currentPath.slice(1) || '/'] || Main
@@ -44,7 +42,7 @@ export default defineComponent({
 <style>
 html,
 body {
-    background: linear-gradient(330deg,rgb(0, 87, 184),rgb(255, 216, 0));
+    background: linear-gradient(150deg,rgb(0, 87, 184),rgb(255, 216, 0));
     max-height: 100%;
     height: 100%;
     margin: 0;

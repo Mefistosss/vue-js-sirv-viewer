@@ -34,13 +34,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import SirvComponent from './SirvComponent.vue';
-import ots from '../utils/optionsToString';
-import isSpin from '../utils/isSpin';
-import isImage from '../utils/isImage';
-import isYoutube from '../utils/isYoutube';
-import isVimeo from '../utils/isVimeo';
-import isVideo from '../utils/isVideo';
+import SirvComponent from '@/components/SirvComponent.vue';
+import ots from '@/utils/optionsToString';
+import isSpin from '@/utils/isSpin';
+import isImage from '@/utils/isImage';
+import isYoutube from '@/utils/isYoutube';
+import isVimeo from '@/utils/isVimeo';
+import isVideo from '@/utils/isVideo';
+import { Viewer, LazyImage } from '@/types/SMVOptions';
+// import SMV from '@/types/SMV';
 
 interface Slide {
     src?: string | undefined
@@ -55,6 +57,14 @@ interface Slide {
     dataHiddenSelector?: string | null
     staticImage?: string | boolean | null
 }
+
+// declare global {
+//   interface Window {
+//       Sirv: SMV
+//     //   Vue: App
+//   }
+// }
+
 
 const getComponentType = (src?: string): string => {
     let result = 'html';
@@ -176,10 +186,10 @@ export default defineComponent({
         },
 
         stringOptions () {
-            let opt: object = this.options;
+            let opt: Viewer | LazyImage = this.options;
 
-            if (!(opt as any).autostart) {
-                (opt as any).autostart = 'off';
+            if (!opt.autostart) {
+                opt.autostart = 'off';
             }
 
             return ots(opt);
@@ -188,28 +198,18 @@ export default defineComponent({
 
     methods: {
         isImage: isImage,
-
-        start() {
-            (window as any).Sirv.start('#' + this.id);
-        },
-
-        stop() {
-            (window as any).Sirv.stop('#' + this.id);
-        },
-
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        on() {},
-
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        off() {}
     },
 
     mounted() {
-        this.start();
+        if (window.Sirv) {
+            window.Sirv.start(`#${this.id}`);
+        }
     },
 
     beforeUnmount() {
-        this.stop();
+        if (window.Sirv) {
+            window.Sirv.stop(`#${this.id}`);
+        }
     }
 });
 </script>

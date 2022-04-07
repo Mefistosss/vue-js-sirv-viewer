@@ -23,7 +23,7 @@ Vue.use(SirvViewer)
     <div class="example-container">
         <router-link to="/example1">
             <div><span>Props</span></div>
-        </router-link> |
+        </router-link>
         <router-link to="/example2">
             <div><span>Slots</span></div>
         </router-link>
@@ -39,25 +39,6 @@ Vue.use(SirvViewer)
         <router-link to="/example6">
             <div><span>Events, API</span></div>
         </router-link>
-
-        <!-- <a href="#/example1">
-            <div><span>Props</span></div>
-        </a> -->
-        <!-- <a href="#/example2">
-            <div><span>Slots</span></div>
-        </a> -->
-        <!-- <a href="#/example3">
-            <div><span>Slide props</span></div>
-        </a> -->
-        <!-- <a href="#/example4">
-            <div><span>Slots, options</span></div>
-        </a> -->
-        <!-- <a href="#/example5">
-            <div><span>*.view file</span></div>
-        </a> -->
-        <!-- <a href="#/example6">
-            <div><span>Events, API</span></div>
-        </a> -->
     </div>
     <p>Lazy image examples</p>
     <div class="example-container">
@@ -67,13 +48,6 @@ Vue.use(SirvViewer)
         <router-link to="/example8">
             <div><span>Background image</span></div>
         </router-link>
-
-        <!-- <a href="#/example7">
-            <div><span>Lazy image</span></div>
-        </a> -->
-        <!-- <a href="#/example8">
-            <div><span>Background image</span></div>
-        </a> -->
     </div>
 </template>
 
