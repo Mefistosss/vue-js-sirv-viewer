@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
-/demo/dist
-/demo/public/sirv
+/dist
+/public/sirv
 
 
 # local env files
