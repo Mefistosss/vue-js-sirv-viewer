@@ -5,7 +5,7 @@
   "author": "sergey <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "rollup -c",
+    "build": "vue-cli-service build --target lib --name index src/index.ts && tsc --emitDeclarationOnly",
     "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
