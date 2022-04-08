@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import SirvComponent from '@/components/SirvComponent.vue';
+import SirvComponent from '../../src/plugins/SirvMediaViewer/components/SirvComponent.vue';
 
 const propsFactory = (values: object = {}) => {
     return shallowMount(SirvComponent, {

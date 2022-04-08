@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
-    "importHelpers": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -12,13 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
-    "noImplicitAny": false,
     "declaration": true,
     "declarationDir": "dist",
     "emitDeclarationOnly": true,
-    "plugins": [{ "name": "ts-vue-plugin" }],
     "baseUrl": ".",
-    "typeRoots": ["./src", "./node_modules/@types"],
     "types": [
       "webpack-env",
       "jest"
@@ -43,9 +39,6 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "./demo",
-    "./demo2"
+    "node_modules"
   ]
 }

@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import SirvViewer from '@/components/SirvViewer.vue';
+import SirvViewer from '../../src/plugins/SirvMediaViewer/components/SirvMediaViewer.vue';
 
 const propsFactory = (values: object = {}) => {
     return shallowMount(SirvViewer, {
@@ -12,13 +12,7 @@ const propsFactory = (values: object = {}) => {
             }
         },
 
-        props: { ...values },
-        methods: {
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
-            start: () => {},
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
-            stop: () => {}
-        }
+        props: { ...values }
     });
 };
 
