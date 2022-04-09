@@ -16,9 +16,12 @@ npm install --save vue-js-sirv-viewer
 ```
 ## register as plugin
 ```
-import SirvViewer from 'vue-js-sirv-viewer';
+import App from './App.vue'
+import SirvMediaViewer from 'vue-js-sirv-viewer';
 
-Vue.use(SirvViewer);
+createApp(App)
+    .use(SirvMediaViewer)
+    .mount('#app');
 ```
 ## basic usage
 ```
