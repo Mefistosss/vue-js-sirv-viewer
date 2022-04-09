@@ -1,15 +1,17 @@
 {
   "name": "vue-js-sirv-viewer",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "Sirv Media Viewer for Vue.js",
   "author": "sergey <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name index src/index.js",
+    "build": "vue-cli-service build --target lib --name index src/plugins/SirvMediaViewer/index.ts && tsc --emitDeclarationOnly",
     "test": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare" : "npm run build"
   },
   "main": "dist/index.umd.js",
+  "types": "dist/src/plugins/SirvMediaViewer/index.d.ts",
   "keywords": [
     "front-end",
     "web",
@@ -24,54 +26,29 @@
   ],
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "^5.0.4",
-    "@vue/cli-plugin-eslint": "^5.0.4",
-    "@vue/cli-plugin-unit-jest": "^5.0.4",
-    "@vue/cli-service": "^5.0.4",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
     "@vue/test-utils": "^2.0.0-0",
-    "@vue/vue3-jest": "^27.0.0-alpha.4",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
     "babel-jest": "^27.0.6",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "jest": "^27.0.5",
-    "vue-jest": "^3.0.7"
+    "ts-jest": "^27.0.4",
+    "typescript": "~4.5.5"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ],
   "bugs": {
     "url": "https://github.com/Mefistosss/vue-js-sirv-viewer/issues"
   },
@@ -79,5 +56,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Mefistosss/vue-js-sirv-viewer.git"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
