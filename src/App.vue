@@ -1,32 +1,22 @@
 <template>
-    <button v-if="backButton" v-on:click="back" class="btn">Back</button>
+    <button v-if="homeButton" v-on:click="home" class="btn">Home</button>
     <div class="window">
       <router-view></router-view>
     </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 export default defineComponent({
     name: 'App',
-    data() {
-        return {
-            currentPath: window.location.hash
-        };
-    },
     computed: {
-        backButton() {
+        homeButton() {
             return this.$route.name !== 'home';
         }
     },
-    mounted() {
-        // window.addEventListener('hashchange', () => {
-        //     this.currentPath = window.location.hash;
-		// });
-    },
     methods: {
-        back() {
-            // this.currentPath = '#/';
-            // window.location.hash = this.currentPath;
+        home() {
+            this.$router.push('/');
         }
     }
 });
