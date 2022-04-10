@@ -8,15 +8,23 @@
 &lt;script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"&gt;&lt;/script&gt;
             </pre>
         </div>
+        or you can use <a href="https://www.npmjs.com/package/sirv-media-viewer-script">npm module</a>
     </div>
-<p>Using plugin</p>
+    <p>Iinstall</p>
     <div class="wrapper">
         <pre class="prettyprint lang-javascript">
 npm install --save vue-js-sirv-viewer
+        </pre>
+    </div>
+    <p>Register as plugin</p>
+    <div class="wrapper">
+        <pre class="prettyprint lang-javascript">
+import App from './App.vue'
+import SirvMediaViewer from 'vue-js-sirv-viewer';
 
-...
-import SirvViewer from 'vue-js-sirv-viewer'
-Vue.use(SirvViewer)
+createApp(App)
+    .use(SirvMediaViewer)
+    .mount('#app');
         </pre>
     </div>
     <p>Viewer examples</p>
