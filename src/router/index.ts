@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 import Main from '@/views/Main.vue';
 import Example1 from '@/views/Example1.vue';
@@ -55,7 +55,9 @@ const routes: Array<RouteRecordRaw> = [
     path: '/example8',
     name: 'example8',
     component: Example8
-  }
+  },
+
+  { path: '/:catchAll(.*)', redirect: '/' }
 
   // {
   //   path: '/about',
@@ -68,7 +70,8 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 

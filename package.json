@@ -1,14 +1,15 @@
 {
   "name": "vue-js-sirv-viewer",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.8",
   "description": "Sirv Media Viewer for Vue.js",
   "author": "sergey <sergeypo@protonmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name index src/plugins/SirvMediaViewer/index.ts && tsc --emitDeclarationOnly",
+    "build:demo": "vue-cli-service build",
     "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "prepare" : "npm run build"
+    "prepare": "npm run build"
   },
   "main": "dist/index.umd.js",
   "types": "dist/src/plugins/SirvMediaViewer/index.d.ts",
