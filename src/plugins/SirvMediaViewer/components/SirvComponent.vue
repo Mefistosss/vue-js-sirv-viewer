@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-// v-if="['spin', 'zoom', 'youtube', 'vimeo', 'video', 'html'].includes(type)"
+// v-if="['spin', 'zoom', 'youtube', 'vimeo', 'video', 'model', 'html'].includes(type)"
 import { defineComponent } from 'vue';
 import ots from '../utils/optionsToString';
 

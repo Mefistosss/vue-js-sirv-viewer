@@ -41,6 +41,7 @@ import isImage from '../utils/isImage';
 import isYoutube from '../utils/isYoutube';
 import isVimeo from '../utils/isVimeo';
 import isVideo from '../utils/isVideo';
+import isModel from '../utils/isModel';
 import { Viewer, LazyImage } from '../types/SMVOptions';
 import SMV from '../types/SMV';
 
@@ -78,6 +79,8 @@ const getComponentType = (src?: string): string => {
         result = 'vimeo';
     } else if (isVideo(src)) {
         result = 'video';
+    } else if (isModel(src)) {
+        result = 'model';
     }
 
     return result;

@@ -67,6 +67,7 @@ interface Zoom {
     wheel?: boolean
     tiles?: boolean
     trigger?: string
+
     hint?: {
         enable?: boolean
         text?: {
@@ -75,6 +76,7 @@ interface Zoom {
             dblclick?: string
         }
     }
+
     map?: {
         enable?: boolean
         size?: number
@@ -101,6 +103,51 @@ interface Video {
     }
 }
 
+interface Model {
+    zoom?: boolean
+    preload?: boolean
+    thumbnail?: boolean | string
+    sensitivity?: number
+
+    autorotate?: {
+        enable?: boolean
+        delay?: number
+        speed?: number
+    }
+
+    skybox?: {
+        image?: boolean | string
+        height?: string
+    }
+
+    environmentImage?: boolean | string
+
+    animation?: {
+        autoplay?: boolean
+        name?: boolean | string
+        crossfadeDuration?: number
+        timeScale?: number
+    }
+
+    ar?: {
+        enable?: boolean
+        zoom?: boolean
+        placement?: string
+        xrEnvironment?: boolean
+    }
+
+    shadow?: {
+        intensity?: number
+        softness?: number
+    }
+
+    exposure?: number
+
+    hint?: {
+        finger?: boolean
+    }
+}
+
 interface Viewer {
     orientation?: string
     arrows?: boolean
@@ -110,6 +157,7 @@ interface Viewer {
     quality?: number
     hdQuality?: number
     itemsOrder?: string[]
+
     slide?: {
         first?: number
         delay?: number
@@ -120,6 +168,7 @@ interface Viewer {
             duration?: number
         }
     }
+
     thumbnails?: {
         enable?: boolean
         size?: number | string
@@ -129,6 +178,7 @@ interface Viewer {
         target?: boolean | string
         watermark?: boolean | string
     }
+
     fullscreen?: {
         enable?: boolean
         always?: boolean
@@ -143,6 +193,7 @@ interface Viewer {
             watermark?: boolean | string
         }
     }
+
     contextmenu?: {
         enable?: boolean
         text?: {
@@ -157,9 +208,11 @@ interface Viewer {
             download?: boolean | string
         }
     }
+
     spin?: Spin
     zoom?: Zoom
     video?: Video
+    model?: Model
 }
 
 interface LazyImage {
@@ -176,5 +229,5 @@ interface SMVOptions {
     lazyImage?: LazyImage
 }
 
-export { SMVOptions, Viewer, LazyImage, Spin, Zoom, Video }
+export { SMVOptions, Viewer, LazyImage, Spin, Zoom, Video, Model }
 export default SMVOptions

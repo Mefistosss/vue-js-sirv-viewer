@@ -24,6 +24,7 @@
                 <div data-src="https://demo.sirv.com/demo/snug/sofa-detail-09.jpg" data-type="zoom"></div>
                 <div data-src="https://demo.sirv.com/demo/snug/sofa-detail-10.jpg" data-type="zoom"></div>
                 <div data-src="https://demo.sirv.com/demo/snug/sofa-detail-11.jpg" data-type="zoom"></div>
+                <div data-src="https://demo.sirv.com/model.glb"></div>
             </sirv-media-viewer>
         </div>
         <div class="code"><div class="wrapper">
@@ -50,6 +51,7 @@
     &lt;div data-src="https://demo.sirv.com/demo/snug/sofa-detail-09.jpg" data-type="zoom"&gt;&lt;/div&gt;
     &lt;div data-src="https://demo.sirv.com/demo/snug/sofa-detail-10.jpg" data-type="zoom"&gt;&lt;/div&gt;
     &lt;div data-src="https://demo.sirv.com/demo/snug/sofa-detail-11.jpg" data-type="zoom"&gt;&lt;/div&gt;
+    &lt;div data-src="https://demo.sirv.com/model.glb"&gt;&lt;/div&gt;
 &lt;/sirv-media-viewer&gt;
 </pre>
         </div></div>

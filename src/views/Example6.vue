@@ -17,6 +17,10 @@
                 {
                     id: 'test-zoom',
                     src: 'https://demo.sirv.com/demo/snug/unpacked.jpg'
+                },
+                {
+                    id: 'test-model',
+                    src: 'https://demo.sirv.com/model.glb'
                 }]"
             >
             </sirv-media-viewer>
@@ -37,6 +41,10 @@
     {
         id: 'test-zoom',
         src: 'https://demo.sirv.com/demo/snug/unpacked.jpg'
+    },
+    {
+        id: 'test-model',
+        src: 'https://demo.sirv.com/model.glb'
     }]"
 &gt;&lt;/sirv-media-viewer&gt;
     </pre>
@@ -94,6 +102,12 @@ export default {
             }
         });
 
+        this.connections['model:ready'] = this.$smv.on('model:ready', (e: any) => {
+            if (e.id === 'model-image') {
+                console.log('model:ready', e);
+            }
+        });
+
         this.connections['image:ready'] = this.$smv.on('image:ready', (e) => {
             if (e.id === 'test-image') {
                 console.log('image:ready', e);
@@ -104,6 +118,7 @@ export default {
         this.$smv.off('viewer:ready', this.connections['viewer:ready']);
         this.$smv.off('spin:init', this.connections['spin:init']);
         this.$smv.off('zoom:ready', this.connections['zoom:ready']);
+        this.$smv.off('model:ready', this.connections['model:ready']);
         this.$smv.off('image:ready', this.connections['image:ready']);
     }
 }
@@ -167,6 +182,12 @@ export default defineComponent({
             }
         });
 
+        this.connections['model:ready'] = this.$smv.on('model:ready', (e: any) => {
+            if (e.id === 'test-model') {
+                console.log('model:ready', e);
+            }
+        });
+
         this.connections['image:ready'] = this.$smv.on('image:ready', (e: any) => {
             if (e.id === 'test-image') {
                 console.log('image:ready', e);
@@ -177,6 +198,7 @@ export default defineComponent({
         this.$smv.off('viewer:ready', this.connections['viewer:ready']);
         this.$smv.off('spin:init', this.connections['spin:init']);
         this.$smv.off('zoom:ready', this.connections['zoom:ready']);
+        this.$smv.off('model:ready', this.connections['model:ready']);
         this.$smv.off('image:ready', this.connections['image:ready']);
     }
 });

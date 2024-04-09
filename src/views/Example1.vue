@@ -24,7 +24,8 @@
                     'https://demo.sirv.com/demo/snug/sofa-detail-08.jpg',
                     'https://demo.sirv.com/demo/snug/sofa-detail-09.jpg',
                     'https://demo.sirv.com/demo/snug/sofa-detail-10.jpg',
-                    'https://demo.sirv.com/demo/snug/sofa-detail-11.jpg'
+                    'https://demo.sirv.com/demo/snug/sofa-detail-11.jpg',
+                    'https://demo.sirv.com/model.glb'
                 ]"
             >
             </sirv-media-viewer>
@@ -53,7 +54,8 @@
         'https://demo.sirv.com/demo/snug/sofa-detail-08.jpg',
         'https://demo.sirv.com/demo/snug/sofa-detail-09.jpg',
         'https://demo.sirv.com/demo/snug/sofa-detail-10.jpg',
-        'https://demo.sirv.com/demo/snug/sofa-detail-11.jpg'
+        'https://demo.sirv.com/demo/snug/sofa-detail-11.jpg',
+        'https://demo.sirv.com/model.glb'
     ]"
 &gt;&lt;/sirv-media-viewer&gt;
     </pre>
