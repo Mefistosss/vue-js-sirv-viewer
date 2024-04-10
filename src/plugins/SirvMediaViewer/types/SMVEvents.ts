@@ -23,6 +23,15 @@
 //     'spin:rotate'?: () => void
 // }
 
+// interface SMVModelEvents {
+//     'model:init'?: () => void
+//     'model:ready'?: () => void
+//     'model:play'?: () => void
+//     'model:pause'?: () => void
+//     'model:loop'?: () => void
+//     'model:finished'?: () => void
+// }
+
 interface SMVEvents {
     'viewer:ready'?: () => void
     'viewer:fullscreenIn'?: () => void
@@ -52,6 +61,13 @@ interface SMVEvents {
     'video:seek'?: () => void
     'video:fullscreenIn'?: () => void
     'video:fullscreenOut'?: () => void
+
+    'model:init'?: () => void
+    'model:ready'?: () => void
+    'model:play'?: () => void
+    'model:pause'?: () => void
+    'model:loop'?: () => void
+    'model:finished'?: () => void
 
     'image:ready'?: () => void
 }
